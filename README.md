@@ -66,3 +66,26 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
+#### 20191115 4주차 lifecycle
+
+- lifecycle 및 hook 관련 공부
+
+#### 20191117 코드아카데미
+
+- CodeAcademy의 Introduce of JaveScripts 종강
+
+
+#### 20191120 프로젝트 4주차 API 만들기
+
+- PostView만들기
+
+#### 20191123 동영상으로 프로젝트 5주차 내용을 보고 확인함 
+
+- @material-ui/core
+- @material-ui/icons npm install 함
+
+#### 20191124 강의해주신 ppt을 보고 프로젝트 5주차 실습확인 
