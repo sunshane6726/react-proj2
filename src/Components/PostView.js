@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 
-const dummy_prop = {
-    title:"테스트용 타이틀",
-    content:"테스트용 내용",
-}
 
 export default class PostView extends Component {
     render() {

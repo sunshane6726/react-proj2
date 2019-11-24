@@ -82,7 +82,8 @@ class App extends React.Component {
               key = {post.id} 
               title ={post.title}
               content = {post.content}/>
-              <button onClick={this.hanglingDelete}>삭제하기</button></> // elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요
+              <button value={post.id} onClick={this.handlingDelete}>삭제하기</button> 
+              </> // elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서
             )
 
           }
