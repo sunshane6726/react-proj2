@@ -28,6 +28,8 @@ class App extends React.Component {
       }
     )
     console.log("작성 완료!", result)
+    this.setState({title:'',content:''})
+    this.getPosts()
   }
 
   componentDidMount(){
@@ -41,6 +43,13 @@ class App extends React.Component {
     this.setState({results: _results.data}) //_보틍 파라미터일때 _result등의 내용들을선언한다.
 
   }
+
+  
+  handlingDelete = async (event) => {
+    await api.deletePost(event.target.value) //비동기적으로해야됨 동기적으로하면 읽어버리는 중간에 화면에 표시되어 오작동한다.
+    this.getPosts() // 추가해야지 삭제기능을 시전할수가 있다.
+  }
+
 
     render(){
     return (
@@ -63,14 +72,17 @@ class App extends React.Component {
 
           </form>
          
-        </div>
-        <div className = "ViewSection">
+        </div> 
+        <div className = "ViewSection"> 
           {
             this.state.results.map(
-              (post) => <PostView
-              key = {post.id}
+              (post) => 
+              <> 
+              <PostView
+              key = {post.id} 
               title ={post.title}
               content = {post.content}/>
+              <button onClick={this.hanglingDelete}>삭제하기</button></> // elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요
             )
 
           }

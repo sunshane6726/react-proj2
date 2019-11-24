@@ -13,4 +13,8 @@ export default {
     createPost(data){
         return axios.post('/posts/',data)
     },
+
+    deletePost(id){
+        return axios.delete('/posts/'+String(id))
+    }, // 특정 id를 삭제하는 기능을 넣었다 API 명세를 통해서
 }
