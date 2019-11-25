@@ -5,9 +5,11 @@ import api from './api';
 import PostView from './Components/PostView';
 
 import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+import TextField from '@material-ui/core/TextField';
 
 class App extends React.Component {
 
@@ -61,21 +63,35 @@ class App extends React.Component {
       <div className="App">
         <Container maxWidth="lg">
           <div className = "PostingSection">
-            <Paper className='PostingForm'>
+            <Paper className='PostingPaper'>
             <h2>대나무 숲 글 작성하기</h2>
-            <form onSubmit = {this.handlingSubmit}>
-              <input
-              name="title"
-              value = {this.state.title}
-              onChange= {this.hanglingChange}/>
-              <br /><br />
-              <textarea
-              name="content"
-              value = {this.state.content}
-              onChange= {this.hanglingChange}/>
+            <form className = "PostingForm" onSubmit = {this.handlingSubmit}>
+              
+              <TextField
+              id="outlined-name"
+              label="title"
+              name = "title"
+              //className={classes.textField}
+              value={this.state.title}
+              onChange={this.handlingChange}
+              margin="normal"
+              variant="outlined"
+              />
 
-              <br/>
-              <button type = "submit">제출하기</button>
+              <TextField
+              id="standard-multiline-flexible"
+              label="content"
+              name = "content"
+              multiline
+              rowsMax="4"
+              //className={classes.textField}
+              value={this.state.content}
+              onChange={this.handlingChange}
+              margin="normal"
+              variant="outlined"
+              />      
+              
+              <Button type = "submit" variant="outlined" color="secondary">제출하기</Button>
             
             </form>
             </Paper>

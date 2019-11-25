@@ -1,6 +1,11 @@
-.PostingForm {
-  padding : 3rem;
+.PostingPaper {
+  padding : 1rem;
   margin : 1rem;
+}
+
+.PostingForm {
+  display : flex;
+  flex-direction: column;
 }
 
 body {
