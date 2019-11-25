@@ -89,3 +89,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - @material-ui/icons npm install 함
 
 #### 20191124 강의해주신 ppt을 보고 프로젝트 5주차 실습확인 
+
+- @material-ui/core 및 delete/reflash 에러 확인 및 수정
+- 멋사경영진 대표를 만나심
+
+#### 20191125 material-ui 및 카드
+
+- @material-ui 확인

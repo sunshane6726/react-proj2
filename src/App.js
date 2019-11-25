@@ -4,6 +4,11 @@ import './App.css';
 import api from './api';
 import PostView from './Components/PostView';
 
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+
 class App extends React.Component {
 
   constructor(props){
@@ -54,43 +59,46 @@ class App extends React.Component {
     render(){
     return (
       <div className="App">
-        <div className = "PostingSection">
-          <h2>대나무 숲 글 작성하기</h2>
-          <form onSubmit = {this.handlingSubmit}>
-            <input
-            name="title"
-            value = {this.state.title}
-            onChange= {this.hanglingChange}/>
-            <br /><br />
-            <textarea
-            name="content"
-            value = {this.state.content}
-            onChange= {this.hanglingChange}/>
+        <Container maxWidth="lg">
+          <div className = "PostingSection">
+            <Paper className='PostingForm'>
+            <h2>대나무 숲 글 작성하기</h2>
+            <form onSubmit = {this.handlingSubmit}>
+              <input
+              name="title"
+              value = {this.state.title}
+              onChange= {this.hanglingChange}/>
+              <br /><br />
+              <textarea
+              name="content"
+              value = {this.state.content}
+              onChange= {this.hanglingChange}/>
 
-            <br/>
-            <button type = "submit">제출하기</button>
-
-          </form>
-         
-        </div> 
-        <div className = "ViewSection"> 
-          {
-            this.state.results.map(
-              (post) => 
-              <> 
-              <PostView
-              key = {post.id} 
-              title ={post.title}
-              content = {post.content}/>
-              <button value={post.id} onClick={this.handlingDelete}>삭제하기</button> 
-              </> // elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서
-            )
-
-          }
+              <br/>
+              <button type = "submit">제출하기</button>
+            
+            </form>
+            </Paper>
           
+          </div> 
+          <div className = "ViewSection"> 
+            {
+              this.state.results.map(
+                (post) => 
+                <> 
+                <PostView
+                key = {post.id} 
+                title ={post.title}
+                content = {post.content}/>
+                <button value={post.id} onClick={this.handlingDelete}>삭제하기</button> 
+                </> // elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서
+              ) // 
 
-        </div>
-      
+            }
+            
+          
+          </div>
+        </Container>
       </div>
     );
   }
