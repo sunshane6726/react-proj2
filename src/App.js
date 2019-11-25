@@ -7,9 +7,14 @@ import PostView from './Components/PostView';
 import Container from '@material-ui/core/Container';
 //import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
-
+//import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 class App extends React.Component {
 
@@ -52,8 +57,9 @@ class App extends React.Component {
   }
 
   
-  handlingDelete = async (event) => {
-    await api.deletePost(event.target.value) //비동기적으로해야됨 동기적으로하면 읽어버리는 중간에 화면에 표시되어 오작동한다.
+  handlingDelete = async (id) => {
+    
+    await api.deletePost(id) //비동기적으로해야됨 동기적으로하면 읽어버리는 중간에 화면에 표시되어 오작동한다.
     this.getPosts() // 추가해야지 삭제기능을 시전할수가 있다.
   }
 
@@ -100,15 +106,25 @@ class App extends React.Component {
           <div className = "ViewSection"> 
             {
               this.state.results.map(
-                (post) => 
-                <> 
-                <PostView
-                key = {post.id} 
-                title ={post.title}
-                content = {post.content}/>
-                <button value={post.id} onClick={this.handlingDelete}>삭제하기</button> 
-                </> // elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서
-              ) // 
+                (post) =><Card className={'card'}>
+                  <CardContent>
+                    <Typography className={'card-title'} color="textSecondary" gutterBottom>
+                      게시글
+                    </Typography>
+                    <Typography variant="h5" component="h3">
+                    <PostView  
+                      key = {post.id} 
+                      title ={post.title} 
+                      content = {post.content}
+                      />                                                                                                                          
+                    </Typography>
+                  </CardContent> 
+                  <CardActions>
+                    <Button onClick={(event)=>this.handlingDelete(post.id)} variant="contained" color = "primary" size = "small">삭제합니다.</Button>
+                  </CardActions> 
+                </Card> //elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서 
+               // 컴파일 과정에서 valuse값이 사라지기때문에 함수로 만들어 줘서 바꿔주는 것이 좋다.
+              ) 
 
             }
             
