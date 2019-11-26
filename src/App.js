@@ -16,7 +16,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-class App extends React.Component {
+class Appgit extends React.Component {
 
   constructor(props){
     super(props)
