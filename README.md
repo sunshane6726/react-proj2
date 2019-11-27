@@ -56,3 +56,8 @@ You will also see any lint errors in the console.
 - 깃허브주소
 - 기본아웃라인 만들기
 - 클래스 라이온에 기본 템플릿 만들기
+
+
+#### 20191127 약간의 스타일을 구분하기
+- 배경색
+- 위치변경

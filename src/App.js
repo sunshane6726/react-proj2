@@ -16,7 +16,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-class Appgit extends React.Component {
+class App extends React.Component {
 
   constructor(props){
     super(props)
@@ -123,7 +123,7 @@ class Appgit extends React.Component {
                     <Button onClick={(event)=>this.handlingDelete(post.id)} variant="contained" color = "primary" size = "small">삭제합니다.</Button>
                   </CardActions> 
                 </Card> //elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서 
-               // 컴파일 과정에서 valuse값이 사라지기때문에 함수로 만들어 줘서 바꿔주는 것이 좋다.
+               // 컴파일 과정에서 valuse값이 사라지기때문에 함수로 만들어 바꿔주는 것이 좋다.
               ) 
 
             }
