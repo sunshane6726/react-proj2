@@ -10,17 +10,19 @@ import Paper from '@material-ui/core/Paper';
 //import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+//import Card from '@material-ui/core/Card';
+//import CardActions from '@material-ui/core/CardActions';
+//import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+//import Typography from '@material-ui/core/Typography';
+//import { string } from 'prop-types';
 
 class App extends React.Component {
 
   constructor(props){
     super(props)
     this.state = {
+    
       title: "",
       content: "",
       results : [],
@@ -35,6 +37,7 @@ class App extends React.Component {
     event.preventDefault() // event의 기본적인 기능을 사용 안함
     let result = await api.createPost(
       {
+
         title: this.state.title,
         content: this.state.content,
       }
@@ -58,7 +61,6 @@ class App extends React.Component {
 
   
   handlingDelete = async (id) => {
-    
     await api.deletePost(id) //비동기적으로해야됨 동기적으로하면 읽어버리는 중간에 화면에 표시되어 오작동한다.
     this.getPosts() // 추가해야지 삭제기능을 시전할수가 있다.
   }
@@ -74,7 +76,8 @@ class App extends React.Component {
             <form className = "PostingForm" onSubmit = {this.handlingSubmit}>
               
               <TextField
-              id="outlined-name"
+              //key = {this.state.id} 존재 x
+              id="outlined-basic"
               label="title"
               name = "title"
               //className={classes.textField}
@@ -85,11 +88,11 @@ class App extends React.Component {
               />
 
               <TextField
-              id="standard-multiline-flexible"
+              
               label="content"
               name = "content"
               multiline
-              rowsMax="30"
+              rows="10"
               //className={classes.textField}
               value={this.state.content}
               onChange={this.handlingChange}
@@ -105,24 +108,13 @@ class App extends React.Component {
           </div> 
           <div className = "ViewSection"> 
             {
-              this.state.results.map(
-                (post) =><Card className={'card'}>
-                  <CardContent>
-                    <Typography className={'card-title'} color="textSecondary" gutterBottom>
-                      게시글
-                    </Typography>
-                    <Typography variant="h4" component="h3">
-                    <PostView  
-                      key = {post.id} 
-                      title ={post.title} 
-                      content = {post.content}
-                      />                                                                                                                          
-                    </Typography>
-                  </CardContent> 
-                  <CardActions>
-                    <Button onClick={(event)=>this.handlingDelete(post.id)} variant="contained" color = "primary" size = "small">삭제합니다.</Button>
-                  </CardActions> 
-                </Card> //elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서 
+              this.state.results.map((post)=>
+                <div>
+                  <PostView key = {post.id} id = {post.id} title ={post.title} content ={post.content} handlingDelete = {this.handlingChange} />
+
+                </div>
+                  
+                 //elements요소를 넣어줘야한다. jsx계열의 에러를 없애기위해서 필요, value값을 확인하기위해서 
                // 컴파일 과정에서 valuse값이 사라지기때문에 함수로 만들어 바꿔주는 것이 좋다.
               ) 
 

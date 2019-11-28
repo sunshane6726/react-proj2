@@ -64,3 +64,4 @@ You will also see any lint errors in the console.
 
 #### 20191128 스타일 확인하기
 - 캡쳐해서 확인한다.
+- post.id값 게시글 글순서 확인하기

@@ -1,6 +1,6 @@
 .PostingPaper {
-  padding : 1rem;
-  margin : 1rem;
+  padding : 2rem;
+  margin : 2rem;
   min-width: 50vh;
  
 }
@@ -10,7 +10,7 @@
   min-height: 50vh;
   display : flex;
   font-size : calc(10px + 2vmin);
-  color : black;
+  color : white;
   flex-direction: column;
   
 }
@@ -24,4 +24,8 @@
 
 body {
   background-color: #ee9ca7;
+}
+
+.PostingSection {
+  background-color : black;
 }
