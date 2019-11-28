@@ -61,3 +61,6 @@ You will also see any lint errors in the console.
 #### 20191127 약간의 스타일을 구분하기
 - 배경색
 - 위치변경
+
+#### 20191128 스타일 확인하기
+- 캡쳐해서 확인한다.
