@@ -1,22 +1,27 @@
 .PostingPaper {
   padding : 1rem;
   margin : 1rem;
+  min-width: 50vh;
+ 
 }
 
 .PostingForm {
-  background-color : #ee9ca7;
-  min-height: 100vh;
+  background-color: #ffdde1;
+  min-height: 50vh;
   display : flex;
-  align-items: center;
   font-size : calc(10px + 2vmin);
-  color : white;
+  color : black;
   flex-direction: column;
+  
 }
-
 .card {
   margin-bottom : 2rem;
+  background-color : #ffdde1;
+  font-style: oblique;
+  font-display: black;
+  font-size: medium;
 }
 
 body {
-  background-color: #ffdde1;
+  background-color: #ee9ca7;
 }

@@ -80,8 +80,8 @@ class App extends React.Component {
               //className={classes.textField}
               value={this.state.title}
               onChange={this.handlingChange}
-              margin="normal"
-              variant="outlined"
+              margin= "normal"
+              variant="outlined"             
               />
 
               <TextField
@@ -89,7 +89,7 @@ class App extends React.Component {
               label="content"
               name = "content"
               multiline
-              rowsMax="4"
+              rowsMax="30"
               //className={classes.textField}
               value={this.state.content}
               onChange={this.handlingChange}
@@ -111,7 +111,7 @@ class App extends React.Component {
                     <Typography className={'card-title'} color="textSecondary" gutterBottom>
                       게시글
                     </Typography>
-                    <Typography variant="h5" component="h3">
+                    <Typography variant="h4" component="h3">
                     <PostView  
                       key = {post.id} 
                       title ={post.title} 
