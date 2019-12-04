@@ -16,6 +16,13 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 //import Typography from '@material-ui/core/Typography';
 //import { string } from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+
 
 class App extends React.Component {
 
@@ -27,6 +34,33 @@ class App extends React.Component {
       content: "",
       results : [],
     }
+  }
+
+
+
+  SimpleBottomNavigation = (event) => {
+  const useStyles = makeStyles({
+    root: {
+      width: 500,
+    },
+  });
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+  
+    return (
+      <BottomNavigation
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        showLabels
+        className={classes.root}
+      >
+        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+      </BottomNavigation>
+    );
   }
 
   hanglingChange = (event) => {
@@ -65,6 +99,8 @@ class App extends React.Component {
     this.getPosts() // 추가해야지 삭제기능을 시전할수가 있다.
   }
 
+  
+
 
     render(){
     return (
@@ -100,9 +136,18 @@ class App extends React.Component {
               variant="outlined"
               />      
               
-              <Button type = "submit" variant="outlined" color="secondary">제출하기</Button>
+              <Button type = "submit" variant="outlined" color="primary" >제출하기</Button>
+
             
             </form>
+
+            <BottomNavigation>
+            <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+            <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+            </BottomNavigation>
+          
+
             </Paper>
           
           </div> 

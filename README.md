@@ -66,3 +66,9 @@ You will also see any lint errors in the console.
 - 캡쳐해서 확인한다.
 - post.id값 게시글 글순서 확인하기
 - react-native 연동 가능한지 확인하기
+
+#### 20191204 스타일 버튼교체하기
+
+- 버튼의 스타일 교체하다
+- 멋사과제의 수정하기
+- Icon 변경하기

@@ -52,7 +52,7 @@ export default class PostView extends Component {
                     </Typography>
                   </CardContent> 
                   <CardActions>
-                    <Button size = "small" onClick = {this._onDelete}>삭제합니다.</Button>
+                    <Button size = "medium" onClick = {this._onDelete} variant="outlined" color="secondary" type = "button" fullWidth={true} >삭제합니다.</Button>
                   </CardActions> 
                 </Card> 
             
