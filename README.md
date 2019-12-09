@@ -72,3 +72,7 @@ You will also see any lint errors in the console.
 - 버튼의 스타일 교체하다
 - 멋사과제의 수정하기
 - Icon 변경하기
+
+#### 20191209 스타일 및 다른사람껄로 어떤걸 캡처 프레이징 고민하기
+- 남들것을 보고 공부해보기
+- revert 및 fetch 등의 여러명이 한 경우도 많다.
