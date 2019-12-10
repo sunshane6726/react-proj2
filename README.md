@@ -76,3 +76,8 @@ You will also see any lint errors in the console.
 #### 20191209 스타일 및 다른사람껄로 어떤걸 캡처 프레이징 고민하기
 - 남들것을 보고 공부해보기
 - revert 및 fetch 등의 여러명이 한 경우도 많다.
+
+#### 20191210 스타일 에러 확인하기
+- pip install.txt 확인하기
+- material-ui 추가하기
+
