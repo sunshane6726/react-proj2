@@ -81,6 +81,11 @@ You will also see any lint errors in the console.
 - pip install.txt 확인하기
 - material-ui 추가하기
 
-#### 20191211 스타일 에러 확인하기2
+#### 20191211 스타일 에러 확인하기 2
 - pip list 확인하기
 - material-ui/container, card 알아보기
+
+#### 20191212 스타일 에러 수정하기 3
+- pip install materi-ui Bottom navigation
+- material-ui/Bottom navigation
+- material-ui/Folder
