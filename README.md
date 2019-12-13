@@ -89,3 +89,6 @@ You will also see any lint errors in the console.
 - pip install materi-ui Bottom navigation
 - material-ui/Bottom navigation
 - material-ui/Folder
+
+#### 20191213 다른 스타일 추가 생각해보기
+- 저번처럼 그림과 카드 형태가 좋을듯하다.

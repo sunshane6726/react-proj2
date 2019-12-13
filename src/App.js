@@ -22,6 +22,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import FolderIcon from '@material-ui/icons/Folder';
 
 
 class App extends React.Component {
@@ -46,21 +47,25 @@ class App extends React.Component {
   });
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
+
+
+    const handlingChange_test = (event, newValue) =>{
+      setValue(newValue);
+    };
   
     return (
       <BottomNavigation
         value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        showLabels
+        onChange={handlingChange_test
+        }
+        showLabels       
         className={classes.root}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-        <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-      </BottomNavigation>
+        <BottomNavigationAction label="Recents" value = "recents" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Favorites" value = "favorite" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Nearby" value = "nearby" icon={<LocationOnIcon />} />
+        
+      </BottomNavigation> // FolderIcon 사용되지않는다.
     );
   }
 
@@ -146,6 +151,7 @@ class App extends React.Component {
             <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
             <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
             <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+            <BottomNavigationAction label="Folder" value = "folder" icon={<FolderIcon />} />
             </BottomNavigation>
           
 
